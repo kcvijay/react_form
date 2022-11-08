@@ -1,6 +1,6 @@
 form {
   display: block;
-  width: 50%;
+  width: 100%;
   padding: 0 1rem;
 }
 
@@ -13,7 +13,7 @@ form div {
 
 form label {
   display: inline-block;
-  width: 200px;
+  width: 300px;
   margin-bottom: 2rem;
 }
 
@@ -23,6 +23,8 @@ select {
   padding: 0 0.5rem;
   font-family: inherit;
   width: 100%;
+  background-color: rgb(192, 250, 250);
+  border: none;
 }
 
 form textarea {
@@ -30,6 +32,8 @@ form textarea {
   width: 100%;
   font-family: inherit;
   padding: 0.5rem;
+  background-color: rgb(192, 250, 250);
+  border: none;
 }
 
 .primary-btn {

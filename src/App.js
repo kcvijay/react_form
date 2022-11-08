@@ -26,7 +26,6 @@ class App extends Component {
     this.setState({
       show: true,
     });
-    e.target.reset();
   };
 
   hideModal = (e) => {
@@ -34,7 +33,7 @@ class App extends Component {
     this.setState({
       show: false,
     });
-    e.target.reset();
+    window.location.reload();
   };
 
   render() {
