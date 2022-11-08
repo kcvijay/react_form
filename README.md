@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Assignment for Fullstack Web Developer REACT & NODE at BCH, 2022.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

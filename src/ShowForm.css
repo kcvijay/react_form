@@ -1,0 +1,31 @@
+.show-form {
+  margin: 2rem 0;
+  position: relative;
+  background-color: rgb(242, 242, 242);
+  width: 50%;
+}
+
+.show-form::before {
+  position: absolute;
+  content: "";
+  background-color: rgba(255, 0, 0, 0.3);
+  width: 3px;
+  height: 100%;
+  left: 2rem;
+}
+.show-form p {
+  padding: 1rem 0;
+  border-top: 1px dotted #333;
+  font-weight: 700;
+  padding-left: 4rem;
+}
+
+.show-form p:last-child {
+  border-bottom: 1px dotted #333;
+}
+
+.show-form p span {
+  font-weight: 400;
+
+  margin-left: 1rem;
+}
