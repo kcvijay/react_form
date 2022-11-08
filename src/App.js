@@ -40,7 +40,6 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <h2>Please enter your details</h2>
         <Form getValues={this.changeHandler} showModal={this.showModal} />
         <ShowForm
           firstname={this.state.firstname}

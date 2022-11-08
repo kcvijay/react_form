@@ -4,6 +4,7 @@ import "./Form.css";
 const Form = (props) => {
   return (
     <section className="form" onChange={props.getValues}>
+      <h2>Please enter your details.</h2>
       <form>
         <div>
           <label htmlFor="firstname" className="firstname">
@@ -40,10 +41,10 @@ const Form = (props) => {
         </div>
         <div>
           <label htmlFor="role" className="role">
-            Pick a Role
+            Role:
           </label>
           <select name="role" id="role">
-            <option>Pick an option..</option>
+            <option>Pick a role..</option>
             <option value="Teacher">Teacher</option>
             <option value="Student">Student</option>
             <option value="Other">Other</option>
@@ -61,9 +62,12 @@ const Form = (props) => {
             required
           ></textarea>
         </div>
-        <button className="primary-btn" onClick={props.showModal}>
-          Send
-        </button>
+        <div>
+          <button className="primary-btn" onClick={props.showModal}>
+            {" "}
+            Send
+          </button>
+        </div>
       </form>
     </section>
   );

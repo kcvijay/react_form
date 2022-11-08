@@ -26,7 +26,7 @@ const Modal = (props) => {
           <button className="primary-btn" onClick={props.hideModal}>
             Yes, I would like to send.
           </button>
-          <button className="secondary-btn">
+          <button className="secondary-btn" onClick={props.hideModal}>
             No, I wouldn't like to send.
           </button>
         </div>
