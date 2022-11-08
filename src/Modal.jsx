@@ -12,7 +12,7 @@ const Modal = (props) => {
           Last Name: <span>{props.lastname}</span>
         </p>
         <p>
-          Phone Name: <span>{props.phone}</span>
+          Phone No.: <span>{props.phone}</span>
         </p>
         <p>
           Role: <span>{props.role}</span>
