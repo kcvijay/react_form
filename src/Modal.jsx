@@ -23,10 +23,10 @@ const Modal = (props) => {
 
         <h4>Would you like to send this detail?</h4>
         <div>
-          <button className="primary-btn" onClick={props.hideModal}>
+          <button className="primary-btn" onClick={props.close}>
             Yes, I would like to send.
           </button>
-          <button className="secondary-btn" onClick={props.hideModal}>
+          <button className="secondary-btn" onClick={props.close}>
             No, I wouldn't like to send.
           </button>
         </div>

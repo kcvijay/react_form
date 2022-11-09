@@ -3,7 +3,7 @@ import "./Form.css";
 
 const Form = (props) => {
   return (
-    <section className="form" onChange={props.getValues}>
+    <section className="form" onSubmit={props.closeHandler}>
       <h2>Please enter your details.</h2>
       <form>
         <div>
@@ -14,6 +14,8 @@ const Form = (props) => {
             type="text"
             name="firstname"
             placeholder="For ex. John"
+            onChange={props.getValues}
+            value={props.firstname}
             required
           />
         </div>
@@ -25,6 +27,8 @@ const Form = (props) => {
             type="text"
             name="lastname"
             placeholder="For ex. Doe"
+            onChange={props.getValues}
+            value={props.lastname}
             required
           />
         </div>
@@ -33,9 +37,11 @@ const Form = (props) => {
             Phone No.:
           </label>
           <input
-            type="number"
+            type="tel"
             name="phone"
-            placeholder="For ex. 0401234560"
+            placeholder="For ex. 040-123-4560"
+            onChange={props.getValues}
+            value={props.phone}
             required
           />
         </div>
@@ -43,8 +49,15 @@ const Form = (props) => {
           <label htmlFor="role" className="role">
             Role:
           </label>
-          <select name="role" id="role">
-            <option>Pick a role..</option>
+          <select
+            name="role"
+            id="role"
+            defaultValue="choice"
+            onChange={props.getValues}
+          >
+            <option value="choice" disabled>
+              Pick a role..
+            </option>
             <option value="Teacher">Teacher</option>
             <option value="Student">Student</option>
             <option value="Other">Other</option>
@@ -58,13 +71,15 @@ const Form = (props) => {
             name="message"
             id="message"
             max="1000"
-            placeholder="Your message.."
+            placeholder="Your message..(max 1000 characters)"
+            onChange={props.getValues}
+            value={props.message}
             required
           ></textarea>
         </div>
         <div>
+          <label></label>
           <button className="primary-btn" onClick={props.showModal}>
-            {" "}
             Send
           </button>
         </div>

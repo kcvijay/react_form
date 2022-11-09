@@ -6,55 +6,66 @@ import "./App.css";
 
 class App extends Component {
   state = {
-    firstname: "",
-    lastname: "",
-    phone: "",
-    role: "",
-    message: "",
-    show: false,
+    note: {
+      firstname: "",
+      lastname: "",
+      phone: "",
+      role: "",
+      message: "",
+      show: false,
+    },
   };
 
   changeHandler = (e) => {
     e.preventDefault();
     this.setState({
-      [e.target.name]: e.target.value,
+      note: { ...this.state.note, [e.target.name]: e.target.value },
     });
   };
 
   showModal = (e) => {
     e.preventDefault();
     this.setState({
-      show: true,
+      show: !this.state.show, // Making opposite state of what it was.
     });
   };
 
-  hideModal = (e) => {
-    e.preventDefault();
+  closeHandler = (e) => {
+    //window.location.reload()
     this.setState({
-      show: false,
+      firstname: "",
+      lastname: "",
+      phone: "",
+      role: "",
+      message: "",
     });
-    window.location.reload();
   };
 
   render() {
     return (
       <div className="app">
-        <Form getValues={this.changeHandler} showModal={this.showModal} />
+        <Form
+          getValues={this.changeHandler}
+          showModal={this.showModal}
+          {...this.state.note}
+        />
         <ShowForm
-          firstname={this.state.firstname}
-          lastname={this.state.lastname}
-          phone={this.state.phone}
-          role={this.state.role}
-          message={this.state.message}
+          // firstname={this.state.firstname}
+          // lastname={this.state.lastname}
+          // phone={this.state.phone}
+          // role={this.state.role}
+          // message={this.state.message}
+          {...this.state.note}
         />
         {this.state.show && (
           <Modal
-            firstname={this.state.firstname}
-            lastname={this.state.lastname}
-            phone={this.state.phone}
-            role={this.state.role}
-            message={this.state.message}
-            hideModal={this.hideModal}
+            // firstname={this.state.firstname}
+            // lastname={this.state.lastname}
+            // phone={this.state.phone}
+            // role={this.state.role}
+            // message={this.state.message}
+            {...this.state.note}
+            close={this.closeHandler}
           />
         )}
       </div>
