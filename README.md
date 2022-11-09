@@ -8,9 +8,9 @@ PS: The design and functionalities of the app might be different than screenshot
 
 #### Screenshot 1
 
-<img src="src/assets/screenshot_1.png" alt="screenshot of a react form app" style="width: 750px; border: 1px solid #333; padding: 10px;"/>
+<img src="src/assets/screenshot_1.png" alt="screenshot of a react form app" style="width: 750px; border: 2px solid #333; padding: 10px;"/>
 <hr>
 
 #### Screenshot 2
 
-<img src="src/assets/screenshot_2.png" alt="screenshot of a react form app" style="width: 750px; border: 1px solid #333; padding: 10px;"/>
+<img src="src/assets/screenshot_2.png" alt="screenshot of a react form app" style="width: 750px; border: 2px solid #333; padding: 10px;"/>
