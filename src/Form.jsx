@@ -3,7 +3,7 @@ import "./Form.css";
 
 const Form = (props) => {
   return (
-    <section className="form" onSubmit={props.closeHandler}>
+    <section className="form">
       <h2>Please enter your details.</h2>
       <form>
         <div>

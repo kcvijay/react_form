@@ -12,8 +12,8 @@ class App extends Component {
       phone: "",
       role: "",
       message: "",
-      show: false,
     },
+    show: false,
   };
 
   changeHandler = (e) => {
@@ -26,18 +26,21 @@ class App extends Component {
   showModal = (e) => {
     e.preventDefault();
     this.setState({
-      show: !this.state.show, // Making opposite state of what it was.
+      show: !this.state.show,
+      // Making opposite state of what it was.
     });
   };
 
   closeHandler = (e) => {
-    //window.location.reload()
     this.setState({
-      firstname: "",
-      lastname: "",
-      phone: "",
-      role: "",
-      message: "",
+      note: {
+        firstname: "",
+        lastname: "",
+        phone: "",
+        role: "",
+        message: "",
+      },
+      show: !this.state.show,
     });
   };
 
@@ -49,24 +52,9 @@ class App extends Component {
           showModal={this.showModal}
           {...this.state.note}
         />
-        <ShowForm
-          // firstname={this.state.firstname}
-          // lastname={this.state.lastname}
-          // phone={this.state.phone}
-          // role={this.state.role}
-          // message={this.state.message}
-          {...this.state.note}
-        />
+        <ShowForm {...this.state.note} />
         {this.state.show && (
-          <Modal
-            // firstname={this.state.firstname}
-            // lastname={this.state.lastname}
-            // phone={this.state.phone}
-            // role={this.state.role}
-            // message={this.state.message}
-            {...this.state.note}
-            close={this.closeHandler}
-          />
+          <Modal {...this.state.note} close={this.closeHandler} />
         )}
       </div>
     );
