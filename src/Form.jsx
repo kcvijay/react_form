@@ -1,7 +1,14 @@
 import React from "react";
 import "./Form.css";
 
-const Form = (props) => {
+const Form = ({
+  getValues,
+  firstname,
+  lastname,
+  phone,
+  message,
+  showModal,
+}) => {
   return (
     <section className="form">
       <h2>Please enter your details.</h2>
@@ -13,9 +20,10 @@ const Form = (props) => {
           <input
             type="text"
             name="firstname"
+            id="firstname"
             placeholder="For ex. John"
-            onChange={props.getValues}
-            value={props.firstname}
+            onChange={getValues}
+            value={firstname}
             required
           />
         </div>
@@ -26,9 +34,10 @@ const Form = (props) => {
           <input
             type="text"
             name="lastname"
+            id="lastname"
             placeholder="For ex. Doe"
-            onChange={props.getValues}
-            value={props.lastname}
+            onChange={getValues}
+            value={lastname}
             required
           />
         </div>
@@ -39,9 +48,10 @@ const Form = (props) => {
           <input
             type="tel"
             name="phone"
+            id="phone"
             placeholder="For ex. 040-123-4560"
-            onChange={props.getValues}
-            value={props.phone}
+            onChange={getValues}
+            value={phone}
             required
           />
         </div>
@@ -53,7 +63,7 @@ const Form = (props) => {
             name="role"
             id="role"
             defaultValue="choice"
-            onChange={props.getValues}
+            onChange={getValues}
           >
             <option value="choice" disabled>
               Pick a role..
@@ -72,14 +82,14 @@ const Form = (props) => {
             id="message"
             max="1000"
             placeholder="Your message..(max 1000 characters)"
-            onChange={props.getValues}
-            value={props.message}
+            onChange={getValues}
+            value={message}
             required
           ></textarea>
         </div>
         <div>
           <label></label>
-          <button className="primary-btn" onClick={props.showModal}>
+          <button className="primary-btn" onClick={showModal}>
             Send
           </button>
         </div>

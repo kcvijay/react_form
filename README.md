@@ -6,6 +6,8 @@ This form takes multiple inputs for example, first name, last name and phone num
 
 PS: The design and functionalities of the app might be different than screenshots in future as, application is a subject to constant upgrade.
 
+1st modification: 30.11.22 JSON Server added
+
 #### Screenshot 1
 
 <img src="src/assets/screenshot_1.png" alt="screenshot of a react form app" style="width: 750px; border: 2px solid #333; padding: 10px;"/>

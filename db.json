@@ -1,0 +1,52 @@
+{
+  "notes": [
+    {
+      "id": 1,
+      "firstname": "vijay",
+      "lastname": "kc",
+      "phone": "0505775777",
+      "role": "student",
+      "message": "This is not a very important message"
+    },
+    {
+      "id": 2,
+      "firstname": "niyam",
+      "lastname": "rajbhandari",
+      "phone": "0505556677",
+      "role": "teacher",
+      "message": "This is a very important message"
+    },
+    {
+      "id": 3,
+      "firstname": "ajay Kumar",
+      "lastname": "sapkota",
+      "phone": "040996777",
+      "role": "student",
+      "message": "This is a very very important message"
+    },
+    {
+      "id": 4,
+      "firstname": "ajay Kumar",
+      "lastname": "sapkota",
+      "phone": "040996777",
+      "role": "student",
+      "message": "This is a very very important message"
+    },
+    {
+      "firstname": "",
+      "lastname": "",
+      "phone": "",
+      "role": "",
+      "message": "",
+      "id": 5
+    },
+    {
+      "firstname": "Bikash",
+      "lastname": "Bhattarai",
+      "phone": "982346657",
+      "role": "Student",
+      "message": "This is a random text.",
+      "id": 6
+    }
+  ]
+}

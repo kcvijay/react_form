@@ -1,0 +1,20 @@
+.notes {
+  margin: 1.5rem 0;
+  border: 1px dotted #999;
+  padding: 1rem;
+}
+
+.notes-header {
+  margin: 1rem 0;
+}
+
+ul li {
+  list-style-type: none;
+  padding: 1rem;
+  text-transform: capitalize;
+  background-color: rgb(255, 207, 118);
+}
+
+ul li:not(:last-child) {
+  margin-bottom: 0.5rem;
+}

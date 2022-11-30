@@ -1,23 +1,23 @@
 import React from "react";
 import "./ShowForm.css";
 
-const ShowForm = (props) => {
+const ShowForm = ({ firstname, lastname, phone, role, message }) => {
   return (
     <div className="show-form">
       <p>
-        First Name: <span>{props.firstname}</span>
+        First Name: <span>{firstname}</span>
       </p>
       <p>
-        Last Name: <span>{props.lastname}</span>
+        Last Name: <span>{lastname}</span>
       </p>
       <p>
-        Phone No.: <span>{props.phone}</span>
+        Phone No.: <span>{phone}</span>
       </p>
       <p>
-        Role: <span>{props.role}</span>
+        Role: <span>{role}</span>
       </p>
       <p>
-        Message: <span>{props.message}</span>
+        Message: <span>{message}</span>
       </p>
     </div>
   );

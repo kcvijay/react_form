@@ -1,32 +1,40 @@
 import React from "react";
 import "./Modal.css";
 
-const Modal = (props) => {
+const Modal = ({
+  firstname,
+  lastname,
+  phone,
+  role,
+  message,
+  close,
+  submitHandler,
+}) => {
   return (
     <section className="overlay">
       <div className="modal">
         <p>
-          First Name: <span>{props.firstname}</span>
+          First Name: <span>{firstname}</span>
         </p>
         <p>
-          Last Name: <span>{props.lastname}</span>
+          Last Name: <span>{lastname}</span>
         </p>
         <p>
-          Phone No.: <span>{props.phone}</span>
+          Phone No.: <span>{phone}</span>
         </p>
         <p>
-          Role: <span>{props.role}</span>
+          Role: <span>{role}</span>
         </p>
         <p>
-          Message: <span>{props.message}</span>
+          Message: <span>{message}</span>
         </p>
 
         <h4>Would you like to send this detail?</h4>
         <div>
-          <button className="primary-btn" onClick={props.close}>
+          <button className="primary-btn" onClick={submitHandler}>
             Yes, I would like to send.
           </button>
-          <button className="secondary-btn" onClick={props.close}>
+          <button className="secondary-btn" onClick={close}>
             No, I wouldn't like to send.
           </button>
         </div>

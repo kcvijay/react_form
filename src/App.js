@@ -1,64 +1,65 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+
 import Form from "./Form";
 import ShowForm from "./ShowForm";
 import Modal from "./Modal";
+import NotesList from "./NotesList";
+
 import "./App.css";
 
-class App extends Component {
-  state = {
-    note: {
+const App = () => {
+  const [contact, setContact] = useState({
+    firstname: "",
+    lastname: "",
+    phone: "",
+    role: "",
+    message: "",
+  });
+
+  const [showModal, setShowModal] = useState(false); // Default modal opening state is false.
+
+  const changeHandler = (e) => {
+    setContact({ ...contact, [e.target.name]: e.target.value }); //Opening a 'contact' as whole and update with input data based on input section name
+  };
+
+  //Opens modal with the input data.
+  const sendData = (e) => {
+    e.preventDefault();
+    setShowModal(true);
+  };
+
+  // Closes modal
+  const closeHandler = (e) => {
+    setShowModal(false);
+    setContact({
       firstname: "",
       lastname: "",
       phone: "",
       role: "",
       message: "",
-    },
-    show: false,
-  };
-
-  changeHandler = (e) => {
-    e.preventDefault();
-    this.setState({
-      note: { ...this.state.note, [e.target.name]: e.target.value },
     });
   };
 
-  showModal = (e) => {
-    e.preventDefault();
-    this.setState({
-      show: !this.state.show,
-      // Making opposite state of what it was.
-    });
+  const submitHandler = () => {
+    axios.post("http://localhost:3001/notes", { ...contact });
+    setShowModal(false);
+    closeHandler();
   };
 
-  closeHandler = (e) => {
-    this.setState({
-      note: {
-        firstname: "",
-        lastname: "",
-        phone: "",
-        role: "",
-        message: "",
-      },
-      show: !this.state.show,
-    });
-  };
-
-  render() {
-    return (
-      <div className="app">
-        <Form
-          getValues={this.changeHandler}
-          showModal={this.showModal}
-          {...this.state.note}
+  return (
+    <div className="app">
+      <Form getValues={changeHandler} showModal={sendData} />
+      <ShowForm {...contact} />
+      {showModal && (
+        <Modal
+          {...contact}
+          close={closeHandler}
+          submitHandler={submitHandler}
         />
-        <ShowForm {...this.state.note} />
-        {this.state.show && (
-          <Modal {...this.state.note} close={this.closeHandler} />
-        )}
-      </div>
-    );
-  }
-}
-
+      )}
+      <NotesList />
+    </div>
+  );
+};
 export default App;
